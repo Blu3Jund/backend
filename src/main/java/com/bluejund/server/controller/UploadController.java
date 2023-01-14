@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-@CrossOrigin(maxAge = 3600, origins = {"http://localhost:8081", "http://localhost:8080"}, allowedHeaders = "Requestor-Type", exposedHeaders = "X-Get-Header")
+@CrossOrigin(maxAge = 3600, origins = {"http://localhost:8081", "http://localhost:8080", "http://localhost:4200/"}, allowedHeaders = "Requestor-Type", exposedHeaders = "X-Get-Header")
 @RestController
 @RequestMapping("/api")
 public class UploadController {
