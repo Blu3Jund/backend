@@ -12,7 +12,7 @@
     <artifactId>server</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>server</name>
-    <description>Server for IPWRC</description>
+    <description>Server for IPRWC</description>
     <properties>
         <java.version>19</java.version>
     </properties>
