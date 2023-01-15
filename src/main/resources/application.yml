@@ -5,7 +5,7 @@ spring:
       database: Griixs
 server:
   ssl:
-    key-store: classpath:springboot.p12
+    key-store: classpath:keystore/springboot.p12
     key-store-password: this_is_super_safe
     key-store-type: pkcs12
     key-alias: springboot
