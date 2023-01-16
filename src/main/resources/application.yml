@@ -3,11 +3,11 @@ spring:
     mongodb:
       uri: mongodb+srv://dev:EnEy3Eztyo2pyo08@griixs.1xs1gwn.mongodb.net/?retryWrites=true&w=majority
       database: Griixs
-server:
-  ssl:
-    key-store: classpath:keystore/springboot.p12
-    key-store-password: this_is_super_safe
-    key-store-type: pkcs12
-    key-alias: springboot
-    key-password: this_is_super_safe
-  port: 8443
+#server:
+#  ssl:
+#    key-store: classpath:keystore/springboot.p12
+#    key-store-password: this_is_super_safe
+#    key-store-type: pkcs12
+#    key-alias: springboot
+#    key-password: this_is_super_safe
+#  port: 8443

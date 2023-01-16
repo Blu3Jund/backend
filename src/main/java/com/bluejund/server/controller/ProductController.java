@@ -18,7 +18,7 @@ import java.util.Base64;
 import java.util.List;
 import java.util.Optional;
 
-@CrossOrigin(maxAge = 3600, origins = {"https://bluejund.com", "http://localhost:8081", "http://localhost:8080", "http://localhost:4200/"}, allowedHeaders = "Content-Type", exposedHeaders = "X-Get-Header")
+@CrossOrigin(maxAge = 3600, origins = {"https://bluejund.com:443", "https://www.bluejund.com:443", "http://localhost:8081", "http://localhost:8080", "http://localhost:4200/"}, allowedHeaders = "Content-Type", exposedHeaders = "X-Get-Header")
 @RestController
 @RequestMapping("/api")
 public class ProductController {
