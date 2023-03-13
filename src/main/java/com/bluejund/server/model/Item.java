@@ -13,14 +13,14 @@ public class Item {
 	private String sku;
 	private Integer quantity_in_stock;
 	private Long price;
-	private Upload upload;
+	private List<String> images;
 	private List<Variation> variations;
 
-	public Item(String sku, Integer quantity_in_stock, Long price, Upload upload, List<Variation> variations) {
+	public Item(String sku, Integer quantity_in_stock, Long price, List<String> images, List<Variation> variations) {
 		this.sku = sku;
 		this.quantity_in_stock = quantity_in_stock;
 		this.price = price;
-		this.upload = upload;
+		this.images = images;
 		this.variations = variations;
 	}
 
@@ -40,8 +40,8 @@ public class Item {
 		return price;
 	}
 
-	public Upload getUpload() {
-		return upload;
+	public List<String> getImages() {
+		return images;
 	}
 
 	public List<Variation> getVariations() {
@@ -60,9 +60,9 @@ public class Item {
 		this.price = price;
 	}
 
-	//	@JsonProperty("upload")
-	public void setUpload(Upload upload) {
-		this.upload = upload;
+	//	@JsonProperty("images")
+	public void setImages(List<String> images) {
+		this.images = images;
 	}
 
 	public void setVariations(List<Variation> variations) {
@@ -76,7 +76,7 @@ public class Item {
 			", sku=" + sku +
 			", quantity_in_stock=" + quantity_in_stock +
 			", price=" + price +
-			", upload=" + upload +
+			", images=" + images +
 			", variations=" + variations +
 			"]";
 	}
