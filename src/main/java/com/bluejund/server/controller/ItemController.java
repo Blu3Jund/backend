@@ -60,7 +60,7 @@ public class ItemController {
         item.getSku(),
         item.getQuantity_in_stock(),
         item.getPrice(),
-        item.getImages(),
+        item.getImage(),
         item.getVariations()));
       return new ResponseEntity<>(_item, HttpStatus.CREATED);
     } catch (Exception e) {
@@ -77,7 +77,7 @@ public class ItemController {
       _item.setSku(item.getSku());
       _item.setQuantity_in_stock(item.getQuantity_in_stock());
       _item.setPrice(item.getPrice());
-      _item.setImages(item.getImages());
+      _item.setImage(item.getImage());
       _item.setVariations(item.getVariations());
       return new ResponseEntity<>(itemRepository.save(_item), HttpStatus.OK);
     } else {

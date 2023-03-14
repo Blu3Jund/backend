@@ -11,18 +11,18 @@ public class Product {
   private String id;
   private String name;
   private String description;
-  private List<String> images;
+  private Image image;
   private List<Item> items;
   private List<Category> categories;
 
   public Product(String name,
                  String description,
-                 List<String> images,
+                 Image image,
                  List<Item> items,
                  List<Category> categories) {
     this.name = name;
     this.description = description;
-    this.images = images;
+    this.image = image;
     this.items = items;
     this.categories = categories;
   }
@@ -39,8 +39,8 @@ public class Product {
     return description;
   }
 
-  public List<String> getImages() {
-    return images;
+  public Image getImage() {
+    return image;
   }
 
   public List<Item> getItems() {
@@ -59,8 +59,8 @@ public class Product {
     this.description = description;
   }
 
-  public void setImages(List<String> images) {
-    this.images = images;
+  public void setImage(Image image) {
+    this.image = image;
   }
 
   public void setItems(List<Item> items) {
@@ -77,7 +77,7 @@ public class Product {
            "id=" + id +
            ", name=" + name +
            ", description=" + description +
-           ", images=" + images +
+           ", image=" + image +
            ", items=" + items +
            ", categories=" + categories +
            "]";

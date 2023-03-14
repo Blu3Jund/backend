@@ -62,7 +62,7 @@ public class ProductController {
       Product _product =
         productRepository.save(new Product(product.getName(),
           product.getDescription(),
-          product.getImages(),
+          product.getImage(),
           product.getItems(),
           product.getCategories()));
       return new ResponseEntity<>(_product, HttpStatus.CREATED);
@@ -80,7 +80,7 @@ public class ProductController {
       Product _product = productData.get();
       _product.setName(product.getName());
       _product.setDescription(product.getDescription());
-      _product.setImages(product.getImages());
+      _product.setImage(product.getImage());
       _product.setItems(product.getItems());
       _product.setCategories(product.getCategories());
       return new ResponseEntity<>(productRepository.save(_product), HttpStatus.OK);

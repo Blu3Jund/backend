@@ -57,7 +57,7 @@ public class ImageController {
     try {
       Image _image = imageRepository.save(new Image(
         image.getImage_name(),
-        image.getImage()));
+        image.getImage_url()));
       return new ResponseEntity<>(_image, HttpStatus.CREATED);
     } catch (Exception e) {
       System.out.println(e);
@@ -72,7 +72,7 @@ public class ImageController {
     if (imageData.isPresent()) {
       Image _image = imageData.get();
       _image.setImage_name(image.getImage_name());
-      _image.setImage(image.getImage());
+      _image.setImage_url(image.getImage_url());
       return new ResponseEntity<>(imageRepository.save(_image), HttpStatus.OK);
     } else {
       return new ResponseEntity<>(HttpStatus.NOT_FOUND);

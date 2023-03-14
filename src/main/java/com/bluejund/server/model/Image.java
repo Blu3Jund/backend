@@ -8,11 +8,11 @@ public class Image {
   @Id
   private String id;
   private String image_name;
-  private String image;
+  private String image_url;
 
-  public Image(String image_name, String image) {
+  public Image(String image_name, String image_url) {
     this.image_name = image_name;
-    this.image = image;
+    this.image_url = image_url;
   }
 
   public String getId() {
@@ -23,16 +23,16 @@ public class Image {
     return image_name;
   }
 
-  public String getImage() {
-    return image;
+  public String getImage_url() {
+    return image_url;
   }
 
   public void setImage_name(String image_name) {
     this.image_name = image_name;
   }
 
-  public void setImage(String image) {
-    this.image = image;
+  public void setImage_url(String image) {
+    this.image_url = image;
   }
 
   @Override
@@ -40,7 +40,7 @@ public class Image {
     return "Image [" +
            "id=" + id +
            ", image_name=" + image_name +
-           ", image=" + image +
+           ", image_url=" + image_url +
            "]";
   }
 }
