@@ -3,7 +3,7 @@ spring:
     mongodb:
       uri: mongodb+srv://dev:EnEy3Eztyo2pyo08@griixs.1xs1gwn.mongodb.net/?retryWrites=true&w=majority
       database: Griixs
-# TODO
+# TODO cate env
 #server:
 #  ssl:
 #    key-store: /etc/letsencrypt/live/bluejund.com/keystore.p12
