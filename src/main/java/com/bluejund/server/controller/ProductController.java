@@ -57,15 +57,21 @@ public class ProductController {
 
   @PostMapping("/products")
   // Might be a list after all not sure
-  public ResponseEntity<Product> createProduct(@RequestBody Product product) {
+  public ResponseEntity<List<Product>> createProduct(@RequestBody Product[] products) {
     try {
-      Product _product =
-        productRepository.save(new Product(product.getName(),
+      List<Product> _products = new ArrayList<>();
+      for (Product product : products) {
+        Product _product = productRepository.save(new Product(product.getName(),
           product.getDescription(),
           product.getImage(),
           product.getItems(),
           product.getCategories()));
-      return new ResponseEntity<>(_product, HttpStatus.CREATED);
+        _products.add(_product);
+      }
+      if (_products.isEmpty()) {
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+      }
+      return new ResponseEntity<>(_products, HttpStatus.CREATED);
     } catch (Exception e) {
       System.out.println(e);
       return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
