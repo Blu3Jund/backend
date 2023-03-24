@@ -2,16 +2,12 @@ package com.bluejund.server.controller;
 
 import com.bluejund.server.model.*;
 import com.bluejund.server.repository.ProductRepository;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import org.bson.BsonBinarySubType;
-import org.bson.types.Binary;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
-import java.util.Base64;
 import java.util.List;
 import java.util.Optional;
 
