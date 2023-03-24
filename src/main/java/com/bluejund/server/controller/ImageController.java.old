@@ -1,6 +1,5 @@
 package com.bluejund.server.controller;
 
-import com.bluejund.server.model.Image;
 import com.bluejund.server.repository.ImageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -23,7 +22,7 @@ public class ImageController {
   @Autowired
   ImageRepository imageRepository;
 //	@GetMapping("/image")
-//	public ResponseEntity<Image> getAllImage(@RequestParam(required = false) String file_name) {
+//	public ResponseEntity<String> getAllImage(@RequestParam(required = false) String file_name) {
 //		try {
 //			Image image = new ArrayImage();
 //
@@ -43,8 +42,8 @@ public class ImageController {
 //	}
 
   @GetMapping("/image/{id}")
-  public ResponseEntity<Image> getImageById(@PathVariable("id") String id) {
-    Optional<Image> imageData = imageRepository.findById(id);
+  public ResponseEntity<String> getImageById(@PathVariable("id") String id) {
+    Optional<String> imageData = imageRepository.findById(id);
     if (imageData.isPresent()) {
       return new ResponseEntity<>(imageData.get(), HttpStatus.OK);
     } else {
@@ -53,11 +52,11 @@ public class ImageController {
   }
 
   @PostMapping("/image")
-  public ResponseEntity<Image> createImage(@RequestBody Image image) {
+  public ResponseEntity<String> createImage(@RequestBody Image image) {
     try {
       Image _image = imageRepository.save(new Image(
         image.getImage_name(),
-        image.getImage_url()));
+        image.getImage()));
       return new ResponseEntity<>(_image, HttpStatus.CREATED);
     } catch (Exception e) {
       System.out.println(e);
@@ -66,13 +65,13 @@ public class ImageController {
   }
 
   @PutMapping("/image/{id}")
-  public ResponseEntity<Image> updateImage(@PathVariable("id") String id,
-                                           @RequestBody Image image) {
-    Optional<Image> imageData = imageRepository.findById(id);
+  public ResponseEntity<String> updateImage(@PathVariable("id") String id,
+                                            @RequestBody Image image) {
+    Optional<String> imageData = imageRepository.findById(id);
     if (imageData.isPresent()) {
       Image _image = imageData.get();
       _image.setImage_name(image.getImage_name());
-      _image.setImage_url(image.getImage_url());
+      _image.setImage(image.getImage());
       return new ResponseEntity<>(imageRepository.save(_image), HttpStatus.OK);
     } else {
       return new ResponseEntity<>(HttpStatus.NOT_FOUND);

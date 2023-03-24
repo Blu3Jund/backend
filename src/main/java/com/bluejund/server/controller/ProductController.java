@@ -1,7 +1,6 @@
 package com.bluejund.server.controller;
 
 import com.bluejund.server.model.*;
-import com.bluejund.server.repository.ImageRepository;
 import com.bluejund.server.repository.ProductRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.bson.BsonBinarySubType;
@@ -24,8 +23,6 @@ import java.util.Optional;
 public class ProductController {
   @Autowired
   ProductRepository productRepository;
-  @Autowired
-  private ImageRepository imageRepository;
 
   @GetMapping("/products")
   public ResponseEntity<List<Product>> getAllProducts(@RequestParam(required = false) String name) {

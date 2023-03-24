@@ -13,13 +13,13 @@ public class Item {
   private String sku;
   private Integer quantity_in_stock;
   private Long price;
-  private Image image;
+  private String image;
   private List<Variation> variations;
 
   public Item(String sku,
               Integer quantity_in_stock,
               Long price,
-              Image image,
+              String image,
               List<Variation> variations) {
     this.sku = sku;
     this.quantity_in_stock = quantity_in_stock;
@@ -44,7 +44,7 @@ public class Item {
     return price;
   }
 
-  public Image getImage() {
+  public String getImage() {
     return image;
   }
 
@@ -64,8 +64,7 @@ public class Item {
     this.price = price;
   }
 
-  //	@JsonProperty("image")
-  public void setImage(Image image) {
+  public void setImage(String image) {
     this.image = image;
   }
 

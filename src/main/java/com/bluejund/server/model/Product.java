@@ -11,13 +11,13 @@ public class Product {
   private String id;
   private String name;
   private String description;
-  private Image image;
+  private String image;
   private List<Item> items;
   private List<Category> categories;
 
   public Product(String name,
                  String description,
-                 Image image,
+                 String image,
                  List<Item> items,
                  List<Category> categories) {
     this.name = name;
@@ -39,7 +39,7 @@ public class Product {
     return description;
   }
 
-  public Image getImage() {
+  public String getImage() {
     return image;
   }
 
@@ -59,7 +59,7 @@ public class Product {
     this.description = description;
   }
 
-  public void setImage(Image image) {
+  public void setImage(String image) {
     this.image = image;
   }
 
