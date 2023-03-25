@@ -14,45 +14,16 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 public class ServerConfig {
 
-	@Bean
-	public WebMvcConfigurer corsConfigurer() {
-		return new WebMvcConfigurer() {
-			@Override
-			public void addCorsMappings(CorsRegistry registry) {
-				registry
-					.addMapping("/*/**")
-					.allowedMethods("HEAD", "GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS")
-					.allowedHeaders("Content-Type", "Authorization");
-			}
-		};
-	}
-
-//	@Bean
-//	public ServletWebServerFactory servletContainer() {
-//		TomcatServletWebServerFactory tomcat = new TomcatServletWebServerFactory() {
-//			@Override
-//			protected void postProcessContext(Context context) {
-//				var securityConstraint = new SecurityConstraint();
-//				securityConstraint.setUserConstraint("CONFIDENTIAL");
-//				var collection = new SecurityCollection();
-//				collection.addPattern("/*");
-//				securityConstraint.addCollection(collection);
-//				context.addConstraint(securityConstraint);
-//			}
-//		};
-//		tomcat.addAdditionalTomcatConnectors(getHttpConnector());
-//		return tomcat;
-//	}
-//
-//	private Connector getHttpConnector() {
-//		var connector = new Connector(TomcatServletWebServerFactory.DEFAULT_PROTOCOL);
-//		connector.setScheme("http");
-//		connector.setPort(8080);
-//		connector.setSecure(false);
-//		connector.setRedirectPort(8443);
-//		return connector;
-//	}
-
-
-
+  @Bean
+  public WebMvcConfigurer corsConfigurer() {
+    return new WebMvcConfigurer() {
+      @Override
+      public void addCorsMappings(CorsRegistry registry) {
+        registry
+          .addMapping("/*/**")
+          .allowedMethods("HEAD", "GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS")
+          .allowedHeaders("Content-Type", "Authorization");
+      }
+    };
+  }
 }
