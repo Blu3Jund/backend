@@ -24,25 +24,6 @@ import java.util.Optional;
 public class VariationController {
   @Autowired
   VariationRepository variationRepository;
-//	@GetMapping("/variations")
-//	public ResponseEntity<List<Variation>> getAllVariations(@RequestParam(required = false) String variation_name) {
-//		try {
-//			List<Variation> variations = new ArrayList<Variation>();
-//
-//			if (variation_name == null)
-//				variationRepository.findAll().forEach(variations::add);
-//			else
-//				variationRepository.findByVariation_nameContaining(variation_name).forEach(variations::add);
-//
-//			if (variations.isEmpty()) {
-//				return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-//			}
-//
-//			return new ResponseEntity<>(variations, HttpStatus.OK);
-//		System.out.println(e);
-//			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
-//		}
-//	}
 
   @GetMapping("/variations/{id}")
   public ResponseEntity<Variation> getVariationById(@PathVariable("id") String id) {
